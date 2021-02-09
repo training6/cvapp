@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import './App.css';
-import DivText from './components/divText';
+import DivText from './components/divText/DivText';
+import TextArea from './components/TextArea/TextAre';
+import Button from './components/Button/Button';
 
 function App() {
   
@@ -8,11 +10,10 @@ const [text, setText] = useState("");
 
   return (
     <div className="App">
-      <button className="resetBtn" onClick={()=>setText("")}>Reset</button>
-
+      <Button reset={()=>setText("")} />
       <div className="container">
-        <textarea value={text} onChange={(e)=> setText(e.target.value)}></textarea>
-        <DivText />    
+        <TextArea words={text} setting={(e)=> setText(e.target.value)} />
+        <DivText write={text}/>    
         
       </div>
     </div>

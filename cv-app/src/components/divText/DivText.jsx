@@ -1,11 +1,11 @@
 import React from "react";
 
-function DivText() {
+function DivText(props) {
   
   return (
     
     <div className="right tile textDisplay">
-      {text}     
+      {props.write}     
     </div>
      
   );
